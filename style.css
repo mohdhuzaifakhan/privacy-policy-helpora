@@ -1,0 +1,229 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-color: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header Styles */
+.glass-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.last-updated {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* TOC Styles */
+.toc {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.toc h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.toc ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.toc a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.toc a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Main Content Box */
+.content-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 3rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+ul {
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    color: var(--text-muted);
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: #f1f5f9;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.info-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.info-card p {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+/* Callout */
+.callout {
+    background: #eef2ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.callout p {
+    margin-bottom: 0;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.contact-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.contact-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
+
+/* Mobile First Adjustments */
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .content-box {
+        padding: 1.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .toc ul {
+        grid-template-columns: 1fr;
+    }
+}

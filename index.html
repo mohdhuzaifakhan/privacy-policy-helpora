@@ -38,6 +38,7 @@
                 <li><a href="#data-retention">7. Data Retention & Deletion</a></li>
                 <li><a href="#children">8. Children's Privacy</a></li>
                 <li><a href="#changes">9. Changes to This Policy</a></li>
+                <li><a href="#data-safety-disclosures">11. Google Play Data Safety Disclosures</a></li>
                 <li><a href="#contact">10. Contact Us</a></li>
             </ul>
         </nav>
@@ -58,13 +59,14 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <h3>Personal Information</h3>
-                        <p>Name, email address, phone number, and physical address provided during registration or
+                        <p>Name, email address, phone number (for secure OTP authentication), and physical address
+                            provided during registration or
                             booking.</p>
                     </div>
                     <div class="info-card">
-                        <h3>Service Data</h3>
-                        <p>Information regarding services requested, provided, and reviews submitted on the platform.
-                        </p>
+                        <h3>Authentication Data</h3>
+                        <p>We collect and transmit your phone number to facilitate one-time password (OTP) verification
+                            for secure user registration and login.</p>
                     </div>
                     <div class="info-card">
                         <h3>Location Data</h3>
@@ -96,12 +98,18 @@
 
             <section id="sharing-of-info">
                 <h2>4. Shared Information</h2>
-                <p>We do not sell your personal data. We only share information in the following circumstances:</p>
+                <p>We do not sell your personal data. We only share information in the following circumstances to
+                    support critical operations:</p>
                 <ul>
                     <li><strong>With Service Providers/Users:</strong> To enable the completion of a booked service.
                     </li>
-                    <li><strong>Third-Party Vendors:</strong> We may employ third-party companies (e.g., payment
-                        processors like Stripe, analytics providers like Google Analytics) to facilitate our service.
+                    <li><strong>Third-Party Vendors & SDKs:</strong> We employ trusted third-party companies to
+                        facilitate our service:
+                        <ul>
+                            <li><em>OTP Verification Services (specifically 2Factor):</em> We share your phone number
+                                with 2Factor OTP service to generate, transmit, and verify one-time passwords (OTPs) for
+                                secure authentication.</li>
+                        </ul>
                     </li>
                     <li><strong>Legal Requirements:</strong> To comply with a legal obligation or protect the rights and
                         safety of our users.</li>
@@ -110,9 +118,18 @@
 
             <section id="data-security">
                 <h2>5. Data Security</h2>
-                <p>The security of your data is important to us. We implement industry-standard security measures,
-                    including encryption (SSL/TLS) for data in transit and secure database storage for data at rest.
-                    However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                <p>The security of your data is of paramount importance to us. We implement industry-standard security
+                    measures to ensure that your personal information is protected:</p>
+                <ul>
+                    <li><strong>Encryption in Transit:</strong> All data transmitted between our mobile application,
+                        servers, and third-party services is encrypted using secure protocols (HTTPS, SSL/TLS).</li>
+                    <li><strong>Data at Rest:</strong> Sensitive user data (such as user credentials, profile
+                        information, and phone numbers) is stored securely in encrypted databases.</li>
+                    <li><strong>Security Audits:</strong> We periodically review our security practices to prevent
+                        unauthorized access, alteration, disclosure, or destruction of data.</li>
+                </ul>
+                <p>However, please be aware that no method of transmission over the Internet or electronic storage is
+                    100% secure.</p>
             </section>
 
             <section id="user-rights">
@@ -132,12 +149,21 @@
             <section id="data-retention">
                 <h2>7. Data Retention & Deletion</h2>
                 <p>We retain your personal information only for as long as is necessary for the purposes set out in this
-                    Privacy Policy. You can request deletion of your account and associated data at any time via the app
-                    settings or by contacting us.</p>
+                    Privacy Policy (such as providing our marketplace services and maintaining account security). You
+                    can request deletion of your account and all associated personal data at any time.</p>
+                <p>Once requested, your account is marked for deletion, and your personal data (including your name,
+                    email, phone number, location data, and transaction details) is permanently deleted from our active
+                    databases within 48 hours, subject to any legal retention requirements.</p>
                 <div class="callout">
-                    <p><strong>Account Deletion:</strong> Users can request account deletion directly through the app
-                        menu or by emailing <a
-                            href="mailto:mohdhuzaifa8126195456@gmail.com">mohdhuzaifa8126195456@gmail.com</a>.</p>
+                    <p><strong>Account Deletion Request Form:</strong> You can submit a deletion request directly inside
+                        the mobile application under <em>Settings &gt; Delete Account</em>, or online using our public
+                        request form: <a href="delete-account.html"
+                            style="font-weight: 600; text-decoration: underline;">Request Account Deletion Online</a>.
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">Alternatively, you can
+                        email us directly at <a
+                            href="mailto:mohdhuzaifa8126195456@gmail.com">mohdhuzaifa8126195456@gmail.com</a> with your
+                        request.</p>
                 </div>
             </section>
 
@@ -152,6 +178,45 @@
                 <h2>9. Changes to This Policy</h2>
                 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the
                     new Privacy Policy on this page and updating the "Last Updated" date at the top.</p>
+            </section>
+
+            <section id="data-safety-disclosures">
+                <h2>11. Google Play Data Safety Disclosures</h2>
+                <p>To ensure full compliance with the Google Play Store Data Safety policies, we declare that our mobile
+                    application collects and shares the following user data to facilitate core features:</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Personal Info (Phone Number)</h3>
+                        <p><strong>Collected:</strong> Yes (Required)<br><strong>Shared:</strong> Yes (Transmitted
+                            securely to our OTP provider, 2Factor, to deliver login SMS)<br><strong>Purpose:</strong>
+                            App Functionality, Account Management, Authentication, and Security/Fraud Prevention.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Personal Info (Name, Email, User ID)</h3>
+                        <p><strong>Collected:</strong> Yes<br><strong>Shared:</strong> No<br><strong>Purpose:</strong>
+                            Account creation, app functionality, communication, and personalization.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Location Data (Precise/Approximate)</h3>
+                        <p><strong>Collected:</strong> Yes (Optional, user-consented)<br><strong>Shared:</strong>
+                            No<br><strong>Purpose:</strong> To connect you with nearby service providers and estimate
+                            distances.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>App Info & Diagnostics (Crash Logs)</h3>
+                        <p><strong>Collected:</strong> Yes<br><strong>Shared:</strong> Yes (Google Play Console/Firebase
+                            Crashlytics)<br><strong>Purpose:</strong> Analytics and diagnosing errors to improve
+                            application stability.</p>
+                    </div>
+                </div>
+                <div class="callout" style="background: #f8fafc; border-left-color: #64748b;">
+                    <p><strong>Encryption in Transit:</strong> Yes, all data transmission relies strictly on encrypted
+                        channels (HTTPS using TLS 1.2 or 1.3).</p>
+                    <p style="margin-top: 0.25rem;"><strong>Data Deletion Offered:</strong> Yes. Users can request
+                        immediate deletion of their collected personal data and account via our <a
+                            href="delete-account.html" style="font-weight: 600; text-decoration: underline;">Account
+                            Deletion Request Form</a>.</p>
+                </div>
             </section>
 
             <section id="contact">

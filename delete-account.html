@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account & Data | Helpora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Request deletion of your Helpora account and associated data.">
+</head>
+
+<body>
+    <header class="glass-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1 class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Helpora</a></h1>
+            <a href="index.html" class="back-link">&larr; Privacy Policy</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Account Deletion Request</h1>
+            <p class="last-updated">Under Google Play Data Safety policy, you have the right to request deletion of your account and personal data.</p>
+        </section>
+
+        <div class="layout-grid">
+            <!-- Left Info Panel -->
+            <article class="content-box delete-info-panel" style="margin-bottom: 2rem;">
+                <section>
+                    <h2>1. What Data is Deleted?</h2>
+                    <p>When you delete your Helpora account, we permanently wipe the following data from our active databases within <strong>48 hours</strong>:</p>
+                    
+                    <ul class="data-delete-list">
+                        <li><strong>Personal Profile:</strong> Your full name, email address, and profile picture.</li>
+                        <li><strong>Credentials & Phone:</strong> Your registered phone number used for login and 2Factor OTP history.</li>
+                        <li><strong>Location Data:</strong> Any saved locations and search distance preferences.</li>
+                        <li><strong>Service History:</strong> Booking logs, chat histories between users and service providers, and ratings/reviews.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2. Retention Policy</h2>
+                    <p>To comply with standard financial auditing and legal obligations in India:</p>
+                    <div class="callout" style="background: #fef08a; border-left-color: #eab308; color: #854d0e; padding: 1rem;">
+                        <p style="color: #854d0e; font-size: 0.85rem; margin-bottom: 0;"><strong>Important Exception:</strong> Completed transaction logs, invoices, and payment references will be retained securely for up to 5 years solely for accounting, tax, and legal requirements. No marketing or authentication data will remain active.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3. How to Request Deletion?</h2>
+                    <p>You can request account deletion in two ways:</p>
+                    <ol style="margin-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>In-App:</strong> Log in to your Helpora app, go to <em>Settings &gt; Account &gt; Delete Account</em>, and confirm your request.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Online (This page):</strong> Fill out the form on the right and click "Send Request via Email". It will open your mail app to send the request directly to our support team.</li>
+                    </ol>
+                </section>
+            </article>
+
+            <!-- Right Interactive Form Panel -->
+            <div class="content-box form-container">
+                <h2>Request Deletion</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your account details. Clicking submit will open your default email application to send your request.</p>
+
+                <!-- Form States -->
+                <form id="deleteForm" onsubmit="handleFormSubmit(event)">
+                    
+                    <!-- STEP 1: FORM INPUTS -->
+                    <div id="step-form" class="form-step active">
+                        <div class="input-group">
+                            <label for="userName">Full Name</label>
+                            <input type="text" id="userName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="userPhone">Registered Phone Number</label>
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix">+91</span>
+                                <input type="tel" id="userPhone" placeholder="10-digit phone number" pattern="[6-9][0-9]{9}" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="userEmail">Registered Email Address</label>
+                            <input type="email" id="userEmail" placeholder="Enter your email address" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; font-family: inherit; font-size: 0.95rem;">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="deleteReason">Reason for Deletion (Optional)</label>
+                            <select id="deleteReason">
+                                <option value="" disabled selected>Select a reason</option>
+                                <option value="no-longer-needed">I no longer need the services</option>
+                                <option value="privacy-concerns">Privacy or data security concerns</option>
+                                <option value="technical-issues">App is too slow or buggy</option>
+                                <option value="other">Other reason</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="deleteMessage">Additional Message (Optional)</label>
+                            <textarea id="deleteMessage" placeholder="Any details you'd like to share..." rows="3" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; font-family: inherit; font-size: 0.95rem; resize: vertical;"></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="confirmCheckbox" required>
+                            <label for="confirmCheckbox">I understand that deleting my account is <strong>permanent</strong> and all active profile data will be destroyed.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Request via Email
+                        </button>
+                    </div>
+
+                    <!-- STEP 2: REDIRECT / SUCCESS STATE -->
+                    <div id="step-success" class="form-step text-center">
+                        <div class="success-checkmark">
+                            <div class="check-icon">
+                                <span class="icon-line line-tip"></span>
+                                <span class="icon-line line-long"></span>
+                                <div class="icon-circle"></div>
+                                <div class="icon-fix"></div>
+                            </div>
+                        </div>
+                        <h3 style="font-size: 1.4rem; margin-top: 1rem; color: #10b981;">Opening Email Client...</h3>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-muted);">We have drafted an email with your request details. Please hit "Send" in your mail client to dispatch it.</p>
+                        
+                        <div class="callout" style="background: #ecfdf5; border-left-color: #10b981; text-align: left; margin-top: 1.5rem; padding: 1rem;">
+                            <p style="font-size: 0.9rem;"><strong>What to do next:</strong></p>
+                            <ol style="margin-left: 1.25rem; font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-main);">
+                                <li style="margin-bottom: 0.25rem;">A new draft has been opened in your default email application.</li>
+                                <li style="margin-bottom: 0.25rem;">Review the pre-filled fields and click <strong>Send</strong>.</li>
+                                <li>Our team will process your deletion and confirm within 48 hours.</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 0.8rem; margin-top: 1.5rem; color: var(--text-muted);">
+                            Didn't see your email client open? 
+                            <a id="fallbackMailto" href="#" style="color: var(--primary-color); font-weight: 600; text-decoration: underline;">Click here to try again</a>.
+                        </p>
+
+                        <button type="button" class="btn btn-primary btn-block" style="margin-top: 1.5rem;" onclick="resetForm()">
+                            Fill Form Again
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Helpora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Form Interactivity Logic -->
+    <script>
+        let mailtoLink = "";
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("userName").value.trim();
+            const phone = document.getElementById("userPhone").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const reasonSelect = document.getElementById("deleteReason");
+            const reason = reasonSelect.options[reasonSelect.selectedIndex].text;
+            const message = document.getElementById("deleteMessage").value.trim();
+
+            const subject = encodeURIComponent("Helpora Account Deletion Request - " + name);
+            const body = encodeURIComponent(
+                "Dear Helpora Support Team,\n\n" +
+                "I am writing to request the permanent deletion of my Helpora account and all associated personal data from your systems.\n\n" +
+                "Account Details:\n" +
+                "------------------------------\n" +
+                "- Full Name: " + name + "\n" +
+                "- Registered Phone Number: +91 " + phone + "\n" +
+                "- Registered Email Address: " + email + "\n" +
+                "- Reason for Deletion: " + (reasonSelect.selectedIndex > 0 ? reason : "Not specified") + "\n" +
+                (message ? "- Additional Message: " + message + "\n" : "") +
+                "------------------------------\n\n" +
+                "I confirm that I understand this action is permanent and cannot be undone. Please proceed with deleting my account and send confirmation back to this email address.\n\n" +
+                "Sincerely,\n" +
+                name
+            );
+
+            mailtoLink = `mailto:mohdhuzaifa8126195456@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Set the fallback button link
+            document.getElementById("fallbackMailto").href = mailtoLink;
+
+            // Transition to Success Step
+            document.getElementById("step-form").classList.remove("active");
+            document.getElementById("step-success").classList.add("active");
+
+            // Open the mail application
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            // Clear inputs
+            document.getElementById("userName").value = "";
+            document.getElementById("userPhone").value = "";
+            document.getElementById("userEmail").value = "";
+            document.getElementById("deleteMessage").value = "";
+            document.getElementById("confirmCheckbox").checked = false;
+            document.getElementById("deleteReason").selectedIndex = 0;
+
+            // Reset Steps
+            document.getElementById("step-success").classList.remove("active");
+            document.getElementById("step-form").classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
